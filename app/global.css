@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: Oswald, Proxima Nova, system-ui, sans-serif;
+	}
+	html {
+		font-family: Merriweather, Proxima Nova, sans-serif;
+	}
+	h1 {
+		@apply text-3xl;
+	}
+	h2 {
+		@apply text-2xl uppercase text-black font-semibold mb-6;
+	}
+}
+
+.icons_contactme {
+	@apply text-2xl sm:text-3xl text-black m-2;
+}
+
+.profileImage {
+	@apply rounded-full;
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% 4%;
+}
+
+section {
+	@apply sm:mb-10 mb-5;
+}
