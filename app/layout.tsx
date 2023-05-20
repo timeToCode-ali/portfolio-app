@@ -12,7 +12,7 @@ export default function RootLayout({
 			<head />
 			<body>
 				<Header name={aboutMeData.name} pages={pages} />
-				{children}
+				<main className='sm:mb-32 mb-16'>{children}</main>
 				<Footer contactMeLinks={contactMeLinks} />
 			</body>
 		</html>

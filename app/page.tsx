@@ -4,7 +4,7 @@ import { aboutMeData } from "./data/data";
 
 const AboutMePage = () => {
 	return (
-		<main className='flex flex-col items-center sm:mb-32 mb-16'>
+		<div className='flex flex-col items-center'>
 			<section className='flex sm:flex-row sm:w-10/12 items-center flex-col w-full'>
 				<div className='sm:w-1/3 w-full flex justify-center mt-12'>
 					<Image
@@ -41,7 +41,7 @@ const AboutMePage = () => {
 					/>
 				</div>
 			</section>
-		</main>
+		</div>
 	);
 };
 
