@@ -1,8 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export const Form = () => {
 	const [isMessageSent, setMessageSent] = useState<boolean>(false);
+
+	const formRef = useRef<HTMLFormElement | null>(null);
 
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -39,9 +41,22 @@ export const Form = () => {
 		}
 	}
 
+	useEffect(() => {
+		let timeout: NodeJS.Timeout;
+		if (isMessageSent && formRef) {
+			formRef.current?.reset();
+			setTimeout(() => {
+				setMessageSent(false);
+			}, 2000);
+		}
+		return () => {
+			clearTimeout(timeout);
+		};
+	}, [isMessageSent]);
+
 	return (
 		<>
-			<form onSubmit={handleSubmit} className='bg-white p-10'>
+			<form onSubmit={handleSubmit} className='bg-white p-10' ref={formRef}>
 				<div className='mb-4'>
 					<label className='label-form' htmlFor='name'>
 						Name

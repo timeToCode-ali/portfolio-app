@@ -1,3 +1,4 @@
+import React from "react";
 import "./global.css";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
